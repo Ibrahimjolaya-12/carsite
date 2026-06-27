@@ -1,0 +1,63 @@
+.accessibility-container {
+  margin-top: 150px;
+  margin-bottom: 100px;
+
+  .page-wrapper {
+    background-color: #ffffff; // Pure premium white theme
+    padding: 40px 20px;
+    color: #222;
+    max-width: 900px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 52px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+      font-family: "Georgia", serif;
+      color: #111;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-family: "Georgia", serif;
+      color: #111;
+    }
+    
+
+    .last-updated {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+      font-style: normal;
+    }
+
+    p {
+      font-size: 32px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 24px;
+    }
+
+    em {
+      font-style: italic;
+      font-weight: 500;
+      color: #000;
+      font-size: 30px;
+    }
+    
+    // Specific contact list block
+    .contact-info {
+        font-size: 16px;
+        line-height: 2.0;
+        
+        strong {
+          font-size: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+}

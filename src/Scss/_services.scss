@@ -1,0 +1,188 @@
+/* ════════════════════════════════
+   HERO SECTION
+════════════════════════════════ */
+
+.hero-main {
+  margin-top: 130px;
+}
+
+/* ── Title ── */
+.hero-heading {
+  font-size: 85px !important;
+  font-weight: 500 !important;
+  line-height: 1.05 !important;
+}
+
+.hero-subheading {
+  font-weight: 300;
+  color: gray;
+  font-size: 22px;
+  max-width: 400px;
+  margin: 0;
+}
+
+/* ── Service Cards ── */
+.service-img {
+  width: 100% !important;
+  height: 400px !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+.service-para {
+  font-size: 20px !important;
+}
+
+/* ════════════════════════════════
+   VIDEO SECTION
+════════════════════════════════ */
+
+.video-wrapper-full {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 520px;
+  margin-top: 100px;
+}
+
+.bg-video1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.content1 {
+  position: relative;
+  z-index: 1;
+  padding: 80px 20px;
+}
+
+.video-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.video-title {
+  color: white !important;
+  font-weight: 500 !important;
+  font-size: 80px !important;
+  line-height: 1 !important;
+}
+
+.video-subtitle {
+  font-size: 24px;
+  line-height: 1.5;
+  color: white !important;
+}
+
+.quote-btn {
+  background-color: white;
+  color: black;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-size: 20px;
+  display: inline-block;
+  border: 2px solid white;
+  transition: background 0.2s, color 0.2s;
+}
+
+.quote-btn:hover {
+  background-color: transparent;
+  color: white;
+}
+
+/* ════════════════════════════════
+   TABLET  ≤ 991px
+════════════════════════════════ */
+@media (max-width: 991px) {
+  .hero-heading {
+    font-size: 60px !important;
+  }
+
+  .service-img {
+    height: 320px !important;
+  }
+
+  .video-title {
+    font-size: 56px !important;
+  }
+
+  .video-subtitle {
+    font-size: 20px;
+  }
+}
+
+/* ════════════════════════════════
+   MOBILE  ≤ 767px
+   — screenshots exactly match this
+════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* Header */
+  .hero-main {
+    margin-top: 80px;
+  }
+
+  .hero-heading {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-subheading {
+    font-size: 15px;
+    max-width: 100%;
+    margin-top: 8px;
+  }
+
+  /* Cards — full width stacked, like screenshots */
+  .service-img {
+    height: 260px !important;
+  }
+
+  .service-para {
+    font-size: 16px !important;
+  }
+
+  /* Video */
+  .video-wrapper-full {
+    min-height: 420px;
+    margin-top: 60px;
+  }
+
+  .content1 {
+    padding: 48px 16px;
+  }
+
+  .video-title {
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+  }
+
+  .video-subtitle {
+    font-size: 15px;
+  }
+
+  .quote-btn {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+/* ════════════════════════════════
+   SMALL MOBILE  ≤ 400px
+════════════════════════════════ */
+@media (max-width: 400px) {
+  .hero-heading {
+    font-size: 28px !important;
+  }
+
+  .video-title {
+    font-size: 26px !important;
+  }
+}

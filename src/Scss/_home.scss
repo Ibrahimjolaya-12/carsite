@@ -1,0 +1,2242 @@
+/* ============================================================
+   FULL SCREEN / DESKTOP STYLES - DO NOT CHANGE
+   ============================================================ */
+
+.navbar {
+  font-size: 25px;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+
+/* Custom utility class link animations ke liye */
+.custom-nav-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px !important;
+}
+
+/* Base line layer jo hidden rehti hai */
+.custom-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+/* Hover par line expand */
+.custom-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Active state line */
+.custom-nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: #000000;
+}
+
+.custom-nav-link.active {
+  font-weight: 600 !important;
+}
+
+/* ====== CUSTOM NAVBAR (Desktop) ====== */
+.custom-navbar {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.navbar-toggle-btn {
+  display: none; /* Desktop pe hide */
+  border: none;
+  background: transparent;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1050;
+}
+
+.navbar-toggle-btn:focus {
+  outline: none;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-nav-custom {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.nav-item-custom {
+  display: inline-block;
+}
+
+.nav-link-custom {
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.navbar-phone {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-phone a {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* ====== VIDEO / HERO SECTION ====== */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+.navbar-nav {
+  display: flex;
+  padding-right: 150px;
+  gap: 10px;
+}
+
+.text {
+  font-size: 60px !important;
+  padding-bottom: "40px";
+  color: black;
+  font-weight: 400;
+}
+
+.ant-row {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-phone {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.phone-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: black;
+  padding: 10px 20px;
+}
+
+.phone {
+  background-color: rgb(255, 255, 255);
+  padding: 8px 17px;
+  color: black;
+}
+
+.phone-link span {
+  letter-spacing: 3px;
+}
+
+.video2 {
+  max-height: 800px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000 !important;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+}
+
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ============================================================
+   MOBILE / SMALL SCREEN STYLES ONLY (Media Queries)
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+
+  /* ====== NAVBAR MOBILE ====== */
+  .navbar-brand {
+    font-size: 18px;
+    z-index: 1050;
+    position: relative;
+  }
+
+  /* Toggle button mobile pe show */
+  .navbar-toggle-btn {
+    display: block !important;
+  }
+
+  /* Menu - mobile pe fullscreen overlay */
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 1040;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    gap: 0;
+  }
+
+  /* Menu open state */
+  .navbar-menu.menu-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-nav-custom {
+    flex-direction: column !important;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-item-custom {
+    margin-bottom: 25px;
+  }
+
+  .nav-link-custom {
+    font-size: 32px !important;
+    color: #333 !important;
+    padding: 0 !important;
+    font-weight: 300;
+  }
+
+  /* Custom underline hide */
+  .custom-nav-link::after {
+    display: none;
+  }
+
+  /* Phone number in menu */
+  .navbar-phone {
+    margin-top: 40px;
+    margin-left: 0 !important;
+  }
+
+  .navbar-phone a {
+    font-size: 18px;
+    color: #333 !important;
+  }
+
+  /* ====== HERO SECTION ====== */
+  .video-container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .bg-video {
+    object-fit: cover;
+    object-position: 65% center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    top: auto;
+    transform: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center !important;
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .content .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .content .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .text {
+    font-size: 32px !important;
+    padding-bottom: 0;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    width: 100%;
+  }
+
+  .content h3 {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: #555;
+    margin-bottom: 25px !important;
+    width: 100%;
+  }
+
+  .content .hover-link {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* Bottom phone - mobile pe HIDE */
+  .bottom-phone {
+    display: none;
+  }
+
+  /* ====== SPECTRUM SECTION ====== */
+  .spectrum-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .spectrum-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .spectrum-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .spectrum-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* ====== DETAILING SECTION ====== */
+  .detailing-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .detailing-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .detailing-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .detailing-section h5 {
+    font-size: 16px !important;
+  }
+
+  .detailing-section .hover-link {
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* ====== ARTISTRY SECTION ====== */
+  .artistry-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .artistry-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .artistry-section video {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 20px;
+  }
+
+  .artistry-section h1 {
+    font-size: 28px !important;
+    font-weight: 400 !important;
+  }
+
+  .artistry-section h1:last-child {
+    font-size: 16px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  /* ====== PROOF SECTION ====== */
+  .proof-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .proof-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .proof-section h1 {
+    font-size: 28px !important;
+  }
+
+  .proof-section h1:last-child {
+    font-size: 18px !important;
+  }
+
+  .mySwiper .swiper-slide img {
+    height: 300px !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 6px;
+  }
+
+  /* ====== ENDORSED SECTION ====== */
+  .endorsed-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .endorsed-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .endorsed-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* Testimonial cards */
+  .testimonials-row {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .testimonials-row .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .testimonials-row .card {
+    min-height: auto !important;
+    padding: 20px !important;
+  }
+
+  .testimonials-row .ant-typography {
+    font-size: 16px !important;
+  }
+
+  .testimonials-row p {
+    font-size: 14px !important;
+  }
+
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+
+/* ============================================================
+   FULL SCREEN CODE - DO NOT CHANGE (Desktop / Default Styles)
+   ============================================================ */
+
+/* ... (sab same rahega) ... */
+
+/* ============================================================
+   MOBILE / SMALL SCREEN STYLES ONLY (Media Queries)
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+
+  /* ====== NAVBAR MOBILE - Fullscreen Overlay Menu ====== */
+  .navbar {
+    font-size: 18px;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  /* Toggle button styling */
+  .navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 8px !important;
+    z-index: 1050;
+    display: block !important; /* Mobile pe show */
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Mobile menu - hidden by default */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 1040;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+
+  /* Mobile menu - show when open */
+  .mobile-menu.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu .navbar-nav {
+    flex-direction: column !important;
+    padding-right: 0;
+    gap: 0;
+    width: 100%;
+  }
+
+  .mobile-menu .nav-item {
+    margin-bottom: 25px;
+  }
+
+  .mobile-menu .nav-link {
+    font-size: 32px !important;
+    color: #333 !important;
+    padding: 0 !important;
+    text-decoration: none;
+    font-weight: 300;
+  }
+
+  /* Custom underline hide */
+  .mobile-menu .custom-nav-link::after {
+    display: none;
+  }
+
+  /* Phone number in menu */
+  .mobile-menu .d-flex {
+    margin-top: 40px;
+    margin-left: 0 !important;
+  }
+
+  .mobile-menu .d-flex a {
+    font-size: 18px;
+    color: #333 !important;
+    gap: 10px;
+  }
+
+  /* ====== HERO SECTION ====== */
+  /* ... (baaki sab same) ... */
+}
+
+
+/* ============================================================
+   FULL SCREEN CODE - DO NOT CHANGE (Desktop / Default Styles)
+   ============================================================ */
+
+
+   /* Mobile menu toggle button */
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 8px !important;
+  z-index: 1050;
+  background: transparent !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Collapse menu fullscreen overlay */
+.navbar-collapse {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 1040;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 40px;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navbar-collapse.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Nav items styling */
+.navbar-collapse .navbar-nav {
+  flex-direction: column !important;
+  padding-right: 0;
+  gap: 0;
+  width: 100%;
+}
+
+.navbar-collapse .nav-item {
+  margin-bottom: 25px;
+}
+
+.navbar-collapse .nav-link {
+  font-size: 32px !important;
+  color: #333 !important;
+  padding: 0 !important;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+/* Custom underline hide */
+.navbar-collapse .custom-nav-link::after {
+  display: none;
+}
+
+/* Phone number in menu */
+.navbar-collapse .d-flex {
+  margin-top: 40px;
+  margin-left: 0 !important;
+}
+
+.navbar-collapse .d-flex a {
+  font-size: 18px;
+  color: #333 !important;
+  gap: 10px;
+}
+/* ============================================================
+   FULL SCREEN CODE - DO NOT CHANGE (Desktop / Default Styles)
+   ============================================================ */
+
+.navbar {
+  font-size: 25px;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+
+/* Custom utility class link animations ke liye */
+.custom-nav-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px !important;
+}
+
+/* Base line layer jo hidden rehti hai */
+.custom-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+/* Scenario 1: Hover karne par line expand ho */
+.custom-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Scenario 2: Active (Navigate hone par) line pakki rukh jaye */
+.custom-nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: #000000;
+}
+
+/* Active page text ko thoda bold karne ke liye (Optional) */
+.custom-nav-link.active {
+  font-weight: 600 !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+.navbar-nav {
+  display: flex;
+  padding-right: 150px;
+  gap: 10px;
+}
+
+.text {
+  font-size: 60px !important;
+  padding-bottom: "40px";
+  color: black;
+  font-weight: 400;
+}
+
+.ant-row {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-phone {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.phone-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: black;
+  padding: 10px 20px;
+}
+
+.phone {
+  background-color: rgb(255, 255, 255);
+  padding: 8px 17px;
+  color: black;
+}
+
+.phone-link span {
+  letter-spacing: 3px;
+}
+
+.video2 {
+  max-height: 800px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000 !important;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+}
+
+/* Swiper ke slides ki images ko dynamic cover aur center karne ke liye */
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ============================================================
+   MOBILE / SMALL SCREEN STYLES ONLY (Media Queries)
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+
+  /* ====== NAVBAR MOBILE - Fullscreen Overlay Menu ====== */
+  .navbar {
+    font-size: 18px;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  /* Toggle button styling */
+  .navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 8px !important;
+    z-index: 1050;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none !important;
+  }
+
+  /* Collapse menu ko fullscreen overlay banana */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 40px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar-collapse.collapsing {
+    height: 100vh !important;
+  }
+
+  .navbar-collapse.show {
+    display: flex !important;
+  }
+
+  .navbar-collapse .navbar-nav {
+    flex-direction: column !important;
+    padding-right: 0;
+    gap: 0;
+    width: 100%;
+  }
+
+  .navbar-collapse .nav-item {
+    margin-bottom: 20px;
+  }
+
+  .navbar-collapse .nav-link {
+    font-size: 28px !important;
+    color: #333 !important;
+    padding: 0 !important;
+    text-decoration: none;
+  }
+
+  /* Custom nav link underline hide karna mobile menu mein */
+  .navbar-collapse .custom-nav-link::after {
+    display: none;
+  }
+
+  /* Phone number in menu */
+  .navbar-collapse .d-flex {
+    margin-top: 30px;
+    margin-left: 0 !important;
+  }
+
+  .navbar-collapse .d-flex a {
+    font-size: 18px;
+    color: #333 !important;
+    gap: 10px;
+  }
+
+  /* Close button (X) - toggle button ko transform karna */
+  .navbar-toggler[aria-expanded="true"] .menu-icon {
+    display: none;
+  }
+
+  /* ====== HERO SECTION ====== */
+  .video-container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .bg-video {
+    object-fit: cover;
+    object-position: 65% center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    top: auto;
+    transform: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center !important;
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .content .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .content .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .text {
+    font-size: 32px !important;
+    padding-bottom: 0;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    width: 100%;
+  }
+
+  .content h3 {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: #555;
+    margin-bottom: 25px !important;
+    width: 100%;
+  }
+
+  .content .hover-link {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* Bottom phone - mobile pe HIDE */
+  .bottom-phone {
+    display: none;
+  }
+
+  /* ====== SPECTRUM SECTION ====== */
+  .spectrum-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .spectrum-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .spectrum-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .spectrum-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* ====== DETAILING SECTION ====== */
+  .detailing-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .detailing-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .detailing-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .detailing-section h5 {
+    font-size: 16px !important;
+  }
+
+  .detailing-section .hover-link {
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* ====== ARTISTRY SECTION ====== */
+  .artistry-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .artistry-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .artistry-section video {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 20px;
+  }
+
+  .artistry-section h1 {
+    font-size: 28px !important;
+    font-weight: 400 !important;
+  }
+
+  .artistry-section h1:last-child {
+    font-size: 16px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  /* ====== PROOF SECTION ====== */
+  .proof-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .proof-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .proof-section h1 {
+    font-size: 28px !important;
+  }
+
+  .proof-section h1:last-child {
+    font-size: 18px !important;
+  }
+
+  .mySwiper .swiper-slide img {
+    height: 300px !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 6px;
+  }
+
+  /* ====== ENDORSED SECTION ====== */
+  .endorsed-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .endorsed-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .endorsed-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* Testimonial cards */
+  .testimonials-row {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .testimonials-row .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .testimonials-row .card {
+    min-height: auto !important;
+    padding: 20px !important;
+  }
+
+  .testimonials-row .ant-typography {
+    font-size: 16px !important;
+  }
+
+  .testimonials-row p {
+    font-size: 14px !important;
+  }
+
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+   /* ============================================================
+   FULL SCREEN CODE - DO NOT CHANGE (Desktop / Default Styles)
+   ============================================================ */
+
+.navbar {
+  font-size: 25px;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+
+/* Custom utility class link animations ke liye */
+.custom-nav-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px !important;
+}
+
+/* Base line layer jo hidden rehti hai */
+.custom-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+/* Scenario 1: Hover karne par line expand ho */
+.custom-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Scenario 2: Active (Navigate hone par) line pakki rukh jaye */
+.custom-nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: #000000;
+}
+
+/* Active page text ko thoda bold karne ke liye (Optional) */
+.custom-nav-link.active {
+  font-weight: 600 !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+.navbar-nav {
+  display: flex;
+  padding-right: 150px;
+  gap: 10px;
+}
+
+.text {
+  font-size: 60px !important;
+  padding-bottom: "40px";
+  color: black;
+  font-weight: 400;
+}
+
+.ant-row {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-phone {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.phone-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: black;
+  padding: 10px 20px;
+}
+
+.phone {
+  background-color: rgb(255, 255, 255);
+  padding: 8px 17px;
+  color: black;
+}
+
+.phone-link span {
+  letter-spacing: 3px;
+}
+
+.video2 {
+  max-height: 800px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000 !important;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+}
+
+/* Swiper ke slides ki images ko dynamic cover aur center karne ke liye */
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ============================================================
+   MOBILE / SMALL SCREEN STYLES ONLY (Media Queries)
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+
+  /* ====== HERO SECTION (Updated - Screenshot ke hisaab se) ====== */
+  .video-container {
+    height: 100vh;
+    position: relative;
+  }
+
+  .bg-video {
+    object-fit: cover;
+    object-position: 70% center; /* Car image ko right side center karne ke liye */
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start !important;
+    text-align: left;
+    top: 0;
+    transform: translateY(0);
+    padding: 100px 20px 20px 20px;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .content .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+
+  .content .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .text {
+    font-size: 28px !important;
+    padding-bottom: 0;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+
+  .content h3 {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    color: #555;
+    margin-bottom: 25px !important;
+    max-width: 60%; /* Text ko left side mein restrict karna */
+  }
+
+  .content .hover-link {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* Bottom phone - mobile pe HIDE karna (screenshot mein nahi hai) */
+  .bottom-phone {
+    display: none;
+  }
+
+  /* ====== SPECTRUM SECTION (car1 + text) ====== */
+  .spectrum-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .spectrum-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .spectrum-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .spectrum-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* ====== DETAILING SECTION (car2 + text + button) ====== */
+  .detailing-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .detailing-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .detailing-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .detailing-section h5 {
+    font-size: 16px !important;
+  }
+
+  .detailing-section .hover-link {
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* ====== ARTISTRY SECTION (video2 + text) ====== */
+  .artistry-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .artistry-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .artistry-section video {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 20px;
+  }
+
+  .artistry-section h1 {
+    font-size: 28px !important;
+    font-weight: 400 !important;
+  }
+
+  .artistry-section h1:last-child {
+    font-size: 16px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  /* ====== PROOF SECTION (slider) ====== */
+  .proof-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .proof-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .proof-section h1 {
+    font-size: 28px !important;
+  }
+
+  .proof-section h1:last-child {
+    font-size: 18px !important;
+  }
+
+  .mySwiper .swiper-slide img {
+    height: 300px !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 6px;
+  }
+
+  /* ====== ENDORSED SECTION (testimonials) ====== */
+  .endorsed-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .endorsed-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .endorsed-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* Testimonial cards - mobile pe stacked */
+  .testimonials-row {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .testimonials-row .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .testimonials-row .card {
+    min-height: auto !important;
+    padding: 20px !important;
+  }
+
+  .testimonials-row .ant-typography {
+    font-size: 16px !important;
+  }
+
+  .testimonials-row p {
+    font-size: 14px !important;
+  }
+
+  /* ====== NAVBAR MOBILE ====== */
+  .navbar {
+    font-size: 18px;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  .navbar-nav {
+    padding-right: 0;
+    gap: 5px;
+    flex-direction: column;
+  }
+
+  /* General container padding for mobile */
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+
+.navbar {
+  font-size: 25px;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+
+/* Custom utility class link animations ke liye */
+.custom-nav-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px !important;
+}
+
+/* Base line layer jo hidden rehti hai */
+.custom-nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+/* Scenario 1: Hover karne par line expand ho */
+.custom-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Scenario 2: Active (Navigate hone par) line pakki rukh jaye */
+.custom-nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: #000000;
+}
+
+/* Active page text ko thoda bold karne ke liye (Optional) */
+.custom-nav-link.active {
+  font-weight: 600 !important;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+.navbar-nav {
+  display: flex;
+  padding-right: 150px;
+  gap: 10px;
+}
+
+.text {
+  font-size: 60px !important;
+  padding-bottom: "40px";
+  color: black;
+  font-weight: 400;
+}
+
+.ant-row {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-phone {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.phone-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: black;
+  padding: 10px 20px;
+}
+
+.phone {
+  background-color: rgb(255, 255, 255);
+  padding: 8px 17px;
+  color: black;
+}
+
+.phone-link span {
+  letter-spacing: 3px;
+}
+
+.video2 {
+  max-height: 800px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000 !important;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+}
+
+/* Swiper ke slides ki images ko dynamic cover aur center karne ke liye */
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ============================================================
+   MOBILE / SMALL SCREEN STYLES ONLY (Media Queries)
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+
+  /* ====== HERO SECTION ====== */
+  .video-container {
+    height: 100vh;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start !important;
+    text-align: left;
+    top: 0;
+    transform: translateY(0);
+    padding: 80px 20px 20px 20px;
+    height: 100%;
+  }
+
+  .content .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+
+  .content .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .text {
+    font-size: 28px !important;
+    padding-bottom: 0;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+
+  .content h3 {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: #555;
+    margin-bottom: 20px !important;
+  }
+
+  .content .hover-link {
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* Bottom phone - mobile pe top right mein */
+  .bottom-phone {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    bottom: auto;
+    z-index: 100;
+  }
+
+  .phone-link {
+    font-size: 14px;
+    padding: 6px 12px;
+    gap: 6px;
+  }
+
+  .phone {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .phone-link span {
+    letter-spacing: 1px;
+  }
+
+  /* ====== SPECTRUM SECTION (car1 + text) ====== */
+  .spectrum-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .spectrum-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .spectrum-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .spectrum-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* ====== DETAILING SECTION (car2 + text + button) ====== */
+  .detailing-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .detailing-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .detailing-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .detailing-section h5 {
+    font-size: 16px !important;
+  }
+
+  .detailing-section .hover-link {
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* ====== ARTISTRY SECTION (video2 + text) ====== */
+  .artistry-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .artistry-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .artistry-section video {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 20px;
+  }
+
+  .artistry-section h1 {
+    font-size: 28px !important;
+    font-weight: 400 !important;
+  }
+
+  .artistry-section h1:last-child {
+    font-size: 16px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  /* ====== PROOF SECTION (slider) ====== */
+  .proof-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .proof-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .proof-section h1 {
+    font-size: 28px !important;
+  }
+
+  .proof-section h1:last-child {
+    font-size: 18px !important;
+  }
+
+  .mySwiper .swiper-slide img {
+    height: 300px !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 6px;
+  }
+
+  /* ====== ENDORSED SECTION (testimonials) ====== */
+  .endorsed-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .endorsed-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .endorsed-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* Testimonial cards - mobile pe stacked */
+  .testimonials-row {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .testimonials-row .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .testimonials-row .card {
+    min-height: auto !important;
+    padding: 20px !important;
+  }
+
+  .testimonials-row .ant-typography {
+    font-size: 16px !important;
+  }
+
+  .testimonials-row p {
+    font-size: 14px !important;
+  }
+
+  /* ====== NAVBAR MOBILE ====== */
+  .navbar {
+    font-size: 18px;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  .navbar-nav {
+    padding-right: 0;
+    gap: 5px;
+    flex-direction: column;
+  }
+
+  /* General container padding for mobile */
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+/* ====== PROOF SECTION (slider) ====== */
+@media screen and (max-width: 768px) {
+  .mySwiper .swiper-slide img {
+    height: 400px !important;
+    object-fit: cover !important; /* Image kategi nahi, poori dikhegi */
+    background-color: #000; /* Khali jagah par black background dikhane ke liye (optional) */
+  }
+
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 6px;
+  }
+}
+
+
+
+/* ============================================================
+   MOBILE / SMALL SCREEN STYLES ONLY (Media Queries)
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+
+  /* ====== HERO SECTION (Fixed) ====== */
+  .video-container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .bg-video {
+    object-fit: cover;
+    object-position: 65% center; /* Car image right side pe center */
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    position: relative; /* absolute nahi, relative rakho */
+    z-index: 2;
+    top: auto;
+    transform: none;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start !important;
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    margin-top: 200px;
+  }
+
+  .content .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .content .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .text {
+    font-size: 32px !important;
+    padding-bottom: 0;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    width: 100%;
+  }
+
+  .content h3 {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    color: #555;
+    margin-bottom: 25px !important;
+    width: 100%; /* Full width pe spread */
+  }
+
+  .content .hover-link {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* Bottom phone - mobile pe HIDE */
+  .bottom-phone {
+    display: none;
+  }
+
+  /* ====== SPECTRUM SECTION ====== */
+  .spectrum-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .spectrum-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .spectrum-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .spectrum-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* ====== DETAILING SECTION ====== */
+  .detailing-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .detailing-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .detailing-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .detailing-section h5 {
+    font-size: 16px !important;
+  }
+
+  .detailing-section .hover-link {
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+  }
+
+  /* ====== ARTISTRY SECTION ====== */
+  .artistry-section .ant-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .artistry-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .artistry-section video {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 20px;
+  }
+
+  .artistry-section h1 {
+    font-size: 28px !important;
+    font-weight: 400 !important;
+  }
+
+  .artistry-section h1:last-child {
+    font-size: 16px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  /* ====== PROOF SECTION ====== */
+  .proof-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .proof-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .proof-section h1 {
+    font-size: 28px !important;
+  }
+
+  .proof-section h1:last-child {
+    font-size: 18px !important;
+  }
+
+  .mySwiper .swiper-slide img {
+    height: 300px !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 6px;
+  }
+
+  /* ====== ENDORSED SECTION ====== */
+  .endorsed-section .ant-row {
+    flex-direction: column !important;
+  }
+
+  .endorsed-section .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .endorsed-section h1 {
+    font-size: 28px !important;
+  }
+
+  /* Testimonial cards */
+  .testimonials-row {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+
+  .testimonials-row .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .testimonials-row .card {
+    min-height: auto !important;
+    padding: 20px !important;
+  }
+
+  .testimonials-row .ant-typography {
+    font-size: 16px !important;
+  }
+
+  .testimonials-row p {
+    font-size: 14px !important;
+  }
+
+  /* ====== NAVBAR MOBILE ====== */
+  .navbar {
+    font-size: 18px;
+    
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  .navbar-nav {
+    padding-right: 0;
+    gap: 5px;
+    flex-direction: column;
+  }
+
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}

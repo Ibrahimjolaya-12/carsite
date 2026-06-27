@@ -1,0 +1,45 @@
+@import "./Scss/bootstrap";
+@import "./Scss/home";
+@import "./Scss/services";
+@import "./Scss/contact";
+@import "./Scss/secondLict";
+@import "./Scss/copyright";
+@import "./Scss/gallery";
+@import "./Scss/infiniteMenu";
+@import "./Scss/loader";
+
+
+
+/* Sab tags par font apply karne ke liye */
+* {
+    font-family: "Smooch Sans", sans-serif !important;
+    // overflow-x: hidden !important;
+}
+
+*::selection {
+    background-color:  #8A8C8C;
+    color: #fff;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #8A8C8C;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.hover-link:hover {
+    text-decoration: underline !important;
+}

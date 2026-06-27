@@ -1,0 +1,76 @@
+/* Container Spacing Rules */
+.gallery-main-container {
+  margin-top: 12rem;
+  margin-bottom: 24rem;
+}
+
+/* Fluid Typography for the Big Title */
+.gallery-main-title {
+  font-size: clamp(2.5rem, 6vw, 5.3rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.1;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Subtitle Control */
+.gallery-subtitle {
+  font-weight: 400;
+  color: #808080;
+  max-width: 450px;
+  width: 100%;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.5;
+}
+
+/* Ant Design Image Component Wrapper Overrides */
+.gallery-img-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* Dynamic handling of Ant Design Image tag structure */
+.gallery-img-wrapper .ant-image,
+.gallery-img-wrapper img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Base heights for large screens */
+.row-height-400 {
+  height: 400px;
+}
+.row-height-450 {
+  height: 450px;
+}
+
+/* ====== RESPONSIVE BREAKPOINTS ====== */
+@media screen and (max-width: 992px) {
+  .row-height-400 {
+    height: 350px;
+  }
+  .row-height-450 {
+    height: 380px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-main-container {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  
+  /* Mobile screen standard heights to prevent extreme cropping */
+  .row-height-400,
+  .row-height-450 {
+    height: 280px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .row-height-400,
+  .row-height-450 {
+    height: 220px;
+  }
+}

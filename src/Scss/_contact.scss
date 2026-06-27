@@ -1,0 +1,94 @@
+/* AntD Select elements ke corners sharp square karne ke liye */
+.custom-select-black .ant-select-selector {
+  border-radius: 0px !important;
+  border: 1px solid #000 !important;
+  height: 50px !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Input boxes focused border override */
+.ant-input:focus, .ant-input-focused, .ant-select-selector:focus {
+  border-color: #555 !important;
+  box-shadow: none !important;
+}
+
+@media screen and (max-width: 768px) {
+
+  /* Body pe horizontal scroll rokne ke liye */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* ====== CONTACT FORM SECTION ====== */
+  .contact-form-section {
+    margin-top: 80px !important;
+    margin-bottom: 50px !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: hidden; /* Extra safety */
+  }
+
+  .contact-info-col {
+    margin-bottom: 40px;
+  }
+
+  .contact-info-col h1 {
+    font-size: 36px !important;
+  }
+
+  .contact-info-col .ant-typography {
+    font-size: 16px !important;
+  }
+
+  /* Telephone/Email row mobile pe stacked */
+  .contact-info-col .ant-row .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 20px;
+  }
+
+  /* Form inputs mobile pe full width - FIXED */
+  .contact-form-col .ant-row .ant-col {
+    width: 80% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .contact-form-col .ant-form-item-label {
+    padding-bottom: 4px;
+  }
+
+  .contact-form-col .ant-form-item-label label {
+    font-size: 20px !important;
+  }
+
+  .contact-form-col input,
+  .contact-form-col .ant-select-selector,
+  .contact-form-col textarea {
+    height: 45px !important;
+    font-size: 18px !important;
+  }
+
+  .contact-form-col .ant-select-selector {
+    height: 45px !important;
+    padding-top: 6px !important;
+  }
+
+  .contact-form-col textarea {
+    height: auto !important;
+  }
+
+  .contact-form-col button {
+    height: 50px !important;
+    font-size: 18px !important;
+  }
+}
+
+
+
+
+
