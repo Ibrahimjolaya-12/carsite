@@ -25,6 +25,13 @@ const Navbar = () => {
 
 
 
+
+
+
+
+
+
+
  useGSAP(() => {
     // Purane saare triggers ko clear karein taaki glitch na ho
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -110,6 +117,11 @@ const Navbar = () => {
 
 
 
+
+
+
+
+  
 
 
 
